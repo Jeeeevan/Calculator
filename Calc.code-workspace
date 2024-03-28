@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../New TTT"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Calc"
+	}
+}
