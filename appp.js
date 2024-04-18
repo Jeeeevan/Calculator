@@ -20,7 +20,7 @@ function create()
         {
             ele.classList.add('operators')
         }
-        ele.id=index;
+        ele.id=cells[index];
         but.append(ele)
         ele.innerHTML=cells[index]
         ele.addEventListener('click',op)
@@ -28,22 +28,23 @@ function create()
 }
 create()
 function op(e) {
-    if (e.target.id === '23') {
+    if (e.target.id === '=') {
       let t = eval(buf);
       console.log(t);
-      ans.textContent = t;
+      ans.innerHTML= t;
     } 
-    else if (e.target.id === '2') {
-      disp.textContent = '0';
-      ans.textContent='0' // clear disp text
+    else if (e.target.id === 'C') {
+      disp.innerHTML = '0';
+      ans.innerHTML='0' // clear disp text
       dbuf = '';
       buf='';
+      console.log('cleared')
     } 
-    else if(e.target.id==1)
+    else if(e.target.id=='exp(x)')
     {
         
         try{
-            dbuf='exp('+buf+')'
+            dbuf=buf+'exp('+buf+')'
             let k=eval(buf)
             buf=String(2.718**k)    
             ans.textContent=eval('2.718**k')
@@ -55,23 +56,23 @@ function op(e) {
         
         console.log(dbuf)
     }
-    else if(e.target.id==20)
+    else if(e.target.id=='1/x')
     {
         
         try{
             dbuf='1/('+buf+')'
             let k=eval(buf)
             buf=String(1/k)
-        ans.textContent=eval('1/k')
+        ans.innerHTML=eval('1/k')
             }
             catch(error)
             {
-                ans.textContent='Error'
+                ans.innerHTML='Error'
             }
         
         console.log(dbuf)
     }
-    else if(e.target.id==4)
+    else if(e.target.id=='xⁿ')
     {
         dbuf='(x)ⁿ'.replace('x',buf)
         buf=buf.concat('^')
@@ -80,18 +81,18 @@ function op(e) {
         // ans.textContent=eval('k**2')
         console.log(dbuf)
     }
-    else if(e.target.id==5)
+    else if(e.target.id=='x²')
     {
         
         try{
             dbuf='(x)²'.replace('x',buf)
         let k=eval(buf)
         buf=String(k**2)
-        ans.textContent=eval('k**2')
+        ans.innerHTML=eval('k**2')
         }
         catch(error)
         {
-            ans.textContent='Error'
+            ans.innerHTML='Error'
         }  
         console.log(dbuf)
     }
@@ -106,14 +107,14 @@ function op(e) {
             }
             catch(error)
             {
-                ans.textContent='Error'
+                ans.innerHTML='Error'
             }
         
         console.log(dbuf)
     }
     else if(e.target.id == 3) {
         dbuf = dbuf.slice(0, -1);
-        disp.textContent=dbuf
+        disp.innerHTML=dbuf
       }
     else {
         if(buf.slice(-1)=='^')
@@ -122,7 +123,7 @@ function op(e) {
       buf=buf.replace('^','')
       let k=eval(buf)
       buf=String(k**cells[e.target.id])
-      ans.textContent=eval(buf)
+      ans.innerHTML=eval(buf)
         }
         else{
       dbuf = dbuf.concat(cells[e.target.id]);
