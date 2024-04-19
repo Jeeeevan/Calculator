@@ -1,127 +1,98 @@
-body{
-    margin:0;
-    padding:0;
-    display:flex;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
     background-color: black;
-    justify-content: center;
     text-align: center;
 }
 
-#cont
-{
+#cont {
     border: solid 1px white;
     border-radius: 50px;
-    justify-content: center;
 }
-#calc-container{
+
+#calc-container {
     display: flex;
     justify-content: space-around; /* Distribute space around elements */
     align-items: center;
     margin-bottom: 5px;
 }
-#calc
-{
-    border: solid 2px white;
-    background-color: rgba(37,52,64,255);
-    border-radius: 15px;
-    /* border-radius: 20px;
-    background-color: black;
-    width: 500px;
-    justify-content: right; */
 
-    
-} 
+#calc {
+    border: solid 2px white;
+    background-color: rgba(37, 52, 64, 255);
+    border-radius: 15px;
+}
+
 #calc2 {
     margin-left: 5px; /* Add margin between calc and calc2 */
     margin-top: 105px;
 }
-#Disp
-{
+
+#Disp, #Ans {
     width: 400px;
-    height:50px;
-    background-color: rgba(37,52,64,255);
-    display:flex;
-    flex-wrap:wrap;
+    height: 50px;
+    background-color: rgba(37, 52, 64, 255);
+    display: flex;
+    flex-wrap: wrap;
     padding-right: 25px;
     justify-content: flex-end;
-    color:white;
-    font-size:xx-large;
+    color: white;
+    font-size: xx-large;
+    font-family: sans-serif;
+    overflow: auto; /* Add overflow handling */
+    word-wrap: break-word; /* Allow text wrapping */
+    white-space: nowrap; /* Prevent text from wrapping onto a new line */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowing text */
+}
+
+#Disp {
     border-radius: 50px 50px 0px 0px;
-    font-family: sans-serif;
 }
-#Ans
-{
-    width: 400px;
-    height:50px;
-    background-color: rgba(37,52,64,255);
-    display:flex;
-    flex-wrap:wrap;
-    padding-right: 25px;
-    /* border-bottom:solid 1px white;
-    border-left:solid 1px white;
-    border-right:solid 1px white; */
-    /* border:solid 1px white; */
-    justify-content: flex-end;
-    color:white;
-    font-size:xx-large;
+
+#Ans {
     border-radius: 0px 0px 50px 50px;
-    font-family: sans-serif;
 }
-#keypad
-{
+
+#keypad, #keypad2 {
     width: 425px;
-    height:600px;
-    background-color: rgba(37,52,64,255);
-    display:flex;
-    flex-wrap:wrap;
-    border:solid 1px white;
-    color:white;
-    font-size:xx-large;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 600px;
+    background-color: rgba(37, 52, 64, 255);
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px white;
+    color: white;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 50px;
     justify-content: center;
 }
-#keypad2
-{
-    width: 425px;
-    height:600px;
-    background-color: rgba(37,52,64,255);
-    display:flex;
-    flex-wrap:wrap;
-    border:solid 1px white;
-    color:white;
-    font-size:xx-large;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 50px;
-    justify-content: center;
-}
-.numbers
-{
-    width:100px;
+
+.numbers{
+    width: 100px;
     height: 100px;
     background-color: rgb(88, 84, 84);
-    border:solid 2px white;
+    border: solid 2px white;
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     justify-content: center; 
     align-items: center;
     color: rgb(255, 255, 255);
     border-radius: 50px;
 }
-.operators
-{
-    width:100px;
+.operators {
+    width: 100px;
     height: 100px;
-    color: rgb(255, 255, 255);
     background-color: rgb(188, 127, 29);
-    border:solid 2px white;
+    border: solid 2px white;
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     justify-content: center; 
     align-items: center;
+    color: rgb(255, 255, 255);
     border-radius: 50px;
 }
